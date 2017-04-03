@@ -1,0 +1,13 @@
+{
+    "name": "sporty-seat/sporty-seat-data",
+    "description": "Description of project SportySeatData.",
+    "authors": [
+        {
+            "name": "Ezra Obiwale",
+            "email": "contact@ezraobiwale.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": ""
+    }
+}

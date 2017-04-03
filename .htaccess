@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+
+IndexIgnore */*
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME}	!-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule (.+) index.php?path=$1&%{QUERY_STRING} [L]
