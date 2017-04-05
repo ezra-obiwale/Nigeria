@@ -15,6 +15,12 @@ class JsonData implements Data {
         return;
     }
 
+    public static function getTargetClassName(&$path) {
+        $paths = explode('/', $path);
+        self::getNodeFromPath($path);
+        return _toCamel($paths[0]) . '\\' . _toCamel($paths[1]);
+    }
+
     /**
      * 
      * @param string $node
@@ -26,7 +32,7 @@ class JsonData implements Data {
         // creating a new document|object entirely
         if (!$path) {
             // ensure object has id
-            $data['id'] = @$data['id'] ? : self::createGUID();
+            $data['id'] = @$data['id'] ?: self::createGUID();
             // use id as the path
             $path = $data['id'];
         }
@@ -92,7 +98,8 @@ class JsonData implements Data {
             // get last key from id
             $paths = explode('/', $path);
             $last_key = null;
-            while (!$last_key && count($paths)) $last_key = array_pop($paths);
+            while (!$last_key && count($paths))
+                $last_key = array_pop($paths);
             if ($last_key && array_key_exists($last_key, $data)) {
                 // remove data at last key from general data
                 unset($data[$last_key]);
@@ -126,8 +133,9 @@ class JsonData implements Data {
      * @return array
      */
     private static function getNode($node) {
-        if (FALSE === $file_path = self::getFilePath($node)) return null;
-        return json_decode(@file_get_contents($file_path), true) ? : [];
+        if (FALSE === $file_path = self::getFilePath($node))
+            return null;
+        return json_decode(@file_get_contents($file_path), true) ?: [];
     }
 
     /**
@@ -152,8 +160,10 @@ class JsonData implements Data {
     private static function setDataAtPath($newData, $path, $oldData, $overwrite = true) {
         $location = & $oldData;
         foreach (explode('/', $path) as $p) {
-            if (!$p) continue;
-            if (!@$location[$p]) $location[$p] = NULL;
+            if (!$p)
+                continue;
+            if (!@$location[$p])
+                $location[$p] = NULL;
             $location = & $location[$p];
         }
         $location = $overwrite ? $newData : array_merge($location, $newData);
@@ -171,11 +181,14 @@ class JsonData implements Data {
     private static function getDataAtPath($data, $path, $returnParent = false) {
         $paths = explode('/', $path);
         $last_key = array_pop($paths);
-        while (!$last_key && count($paths)) $last_key = array_pop($paths);
+        while (!$last_key && count($paths))
+            $last_key = array_pop($paths);
         foreach ($paths as $p) {
-            if (!$p) continue;
+            if (!$p)
+                continue;
             $data = @$data[$p];
-            if (!$data) break;
+            if (!$data)
+                break;
         }
         return !$returnParent && $last_key ? @$data[$last_key] : $data;
     }

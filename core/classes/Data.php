@@ -14,6 +14,13 @@ interface Data {
     public static function getNodeFromPath(&$path);
 
     /**
+     * Gets the name of the class to call
+     * @param string $path
+     * @return string
+     */
+    public static function getTargetClassName(&$path);
+
+    /**
      * Creates the given data at the given node and id, if given
      * @param string $node
      * @param mixed $data

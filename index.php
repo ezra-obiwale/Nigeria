@@ -21,6 +21,8 @@ $response = ['status' => true];
 // default status
 // get path from GET parameters and into array
 $path = filter_input(INPUT_GET, 'path');
+// get node class
+$NodeClass = _toCamel($PROCESSOR::getTargetClassName($path));
 // process request on filename
 if (!$node = $PROCESSOR::getNodeFromPath($path)) {
     $response = [
@@ -36,7 +38,6 @@ else {
         // Block if node is marked blocked 
         if (in_array($node, config('global', 'blockedNodes') ?: []))
             throw new Exception('Access denied');
-        $NodeClass = _toCamel($node);
         // Use node class if exists
         if (class_exists($NodeClass))
             $PROCESSOR = $NodeClass;

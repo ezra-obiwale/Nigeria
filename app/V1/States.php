@@ -1,5 +1,9 @@
 <?php
 
+namespace V1;
+
+use JsonData;
+
 /**
  * Description of State
  *
