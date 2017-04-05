@@ -1,13 +1,10 @@
 {
-    "name": "sporty-seat/sporty-seat-data",
-    "description": "Description of project SportySeatData.",
+    "name": "d-scribe/ng-states-lga",
+    "description": "An API providing the list of Nigerian states and local government areas for development use.",
     "authors": [
         {
             "name": "Ezra Obiwale",
             "email": "contact@ezraobiwale.com"
         }
-    ],
-    "require": {
-        "mongodb/mongodb": ""
-    }
+    ]
 }
