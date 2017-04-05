@@ -6,7 +6,7 @@ An API providing the list of Nigerian states and local government areas for deve
 - **Fetch list of states**
 
   ````
-  https://nigeria.herokuapp.com/states/
+  https://nigeria.herokuapp.com/v1/states/
   ````
   **Response**
   ````json
@@ -31,7 +31,7 @@ An API providing the list of Nigerian states and local government areas for deve
 - **Fetch a single state**
 
   ````
-  https://nigeria.herokuapp.com/states/lagos
+  https://nigeria.herokuapp.com/v1/states/lagos
   ````
   **Response**
   ````json
@@ -48,7 +48,7 @@ An API providing the list of Nigerian states and local government areas for deve
 - **Fetch a state's local government areas**
 
   ````
-  https://nigeria.herokuapp.com/states/kano/lgas
+  https://nigeria.herokuapp.com/v1/states/kano/lgas
   ````
   **Response**
   ````json
@@ -72,7 +72,7 @@ An API providing the list of Nigerian states and local government areas for deve
   
     Only GET requests are allowed on the server to protect the integrity of the data. If there's a need for updates, clone this repo and send pull request.
     
-    The data for the states and lgas is located at https://github.com/ezra-obiwale/NigerianStatesAndLGAs/blob/master/data/state.json
+    The data for the states and lgas is located at https://github.com/ezra-obiwale/Nigeria/blob/master/data/states.json
     
     The updates would be verified and merged into the app.
     
