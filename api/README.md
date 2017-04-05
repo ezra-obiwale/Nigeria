@@ -74,7 +74,7 @@ An API providing the list of Nigerian states and local government areas for deve
     
     The data for the states and lgas is located at [here](https://github.com/ezra-obiwale/Nigeria/blob/master/api/data/states.json)
     
-    The updates would be verified and merged into the app.
+    Updates would be verified and merged into the app.
     
 ## Issues
 Any issue/recommedation should be put up in GitHub issues tab and would be attended to promptly.
