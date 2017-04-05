@@ -83,5 +83,5 @@ else {
         $response['status'] = false;
         $response['message'] = $ex->getMessage();
     }
-    $PROCESSOR::output($response);
 }
+$PROCESSOR::output($response);

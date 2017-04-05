@@ -21,7 +21,7 @@ class States extends JsonData {
                 return $value;
             }, $resp);
         }
-        // showing something specifig
+        // showing something specific
         else {
             // remove last /
             if ($path[strlen($path) - 1] === '/')
