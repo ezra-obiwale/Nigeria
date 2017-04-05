@@ -2,13 +2,12 @@
 
 return [
     'dataProcessor' => JsonData::class,
-    'mongo' => [
-        'db' => 'sportyseat'
-    ],
+//    'mongo' => [
+//        'db' => 'DB_NAME'
+//    ],
     'appNodesOnly' => true,
     'blockedNodes' => [],
     'allowedMethods' => [
-        'state' => ['GET'],
-        'lga' => ['GET']
+        'states' => ['GET']
     ]
 ];

@@ -5,7 +5,7 @@
  *
  * @author Ezra Obiwale <contact@ezraobiwale.com>
  */
-class State extends JsonData {
+class States extends JsonData {
 
     public static function get($node, $path = null, $limit = null, $start = 0) {
         $resp = parent::get($node, $path, $limit, $start);
